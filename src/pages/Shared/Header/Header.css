@@ -1,0 +1,45 @@
+.walks-logo {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    color: #1A1919
+}
+
+a {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #757575;
+}
+
+.start-applying-btn {
+    width: 190px;
+    height: 65px;
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+    border-radius: 8px;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 27px;
+    text-transform: capitalize;
+    ;
+    color: #FFFFFF;
+
+
+}
+
+@media screen and (max-width: 680px) {
+    .start-applying-btn {
+        width: 100px;
+        font-size: 14px;
+        height: 40px;
+    }
+    .walks-logo {
+        font-size: 19px;
+    }
+}
