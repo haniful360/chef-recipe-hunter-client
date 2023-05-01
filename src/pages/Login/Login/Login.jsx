@@ -3,9 +3,11 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import './Login.css';
-// import { AuthContext } from '../providers/AuthProviders';
+import { AuthContext } from '../../../providers/AuthProviders';
+
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext)
     // const [error, setError] = useState('')
     // const [show, setShow] = useState(false);
     // const { signInUser } = useContext(AuthContext)
@@ -27,23 +29,22 @@ const Login = () => {
         //     setError('Login Succesfull')
         // }
 
-        // signInUser(email, password)
-        //     .then(result => {
-        //         console.log(result.user);
-        //         form.reset()
-        //         navigate(from, { replace: true });
-
-        //     })
-        //     .catch(err => {
-        //         console.log(err.message);
-        //         setError(err.message)
-        //     })
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                form.reset()
+                
+            })
+            .catch(err => {
+                console.log(err.message);
+                
+            })
 
     }
     return (
         <div className='form_container'>
             <h2 className='form_title'>Login!</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form_control">
                     <label className='label' htmlFor="email">Email</label>
                     <input type="email" name='email' placeholder='Your Email' id='email' required />
@@ -67,7 +68,7 @@ const Login = () => {
             </div>
             <div className='social_login'>  
                 <button className='google_btn'>
-                    <span><i class="fa-brands fa-google"></i></span>
+                    
                     SignInwith Google</button>
             </div>
         </div>
