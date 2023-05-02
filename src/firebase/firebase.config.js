@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('ENV variable',import.meta.env.VITE_apiKey)
 const firebaseConfig = {
-  apiKey: "AIzaSyBqLy6RVJBrZJKoIxTiY2oWOk4NGyr6F94",
-  authDomain: "chef-hunter-a-10.firebaseapp.com",
-  projectId: "chef-hunter-a-10",
-  storageBucket: "chef-hunter-a-10.appspot.com",
-  messagingSenderId: "40768050718",
-  appId: "1:40768050718:web:364985e34db9ddd468400f"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
