@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
-// import './Header.css'
+import './Header.css';
 import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
@@ -16,26 +16,11 @@ const Header = () => {
     console.log(user);
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>Statistics</Link></li>
+        <li><Link to='/about'>About</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
-        {user?.uid ?
-            <>
-                <span className='mt-3 mr-2'>{user?.displayName || user?.email}</span>
-                <button onClick={handleLogout} className='btn btn-ghost'>Logout</button>
-            </> :
-            <>
-                <button className='mr-3'><Link to='/login'>Login</Link></button>
-                <button><Link to='/register'>Register</Link></button>
-
-            </>
-        }
-        <li>{user?.photoURL ?
-         <img style={{ width: "70px", borderRadius: "50%" }} src={user.photoURL} alt='' /> : 
-         <FaUserCircle></FaUserCircle>}</li>
-
     </>
     return (
-        <div className='background'>
+        <div className=''>
             <div className="navbar lg:w-[1280px] mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -46,16 +31,29 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to="/" className="walks-logo">Walks Of Life</Link>
+                    <Link to="/" className="logo">Chef Hunter</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {menuItems}
                     </ul>
                 </div>
-                {/* <div className="navbar-end">
-                    <button className="start-applying-btn">Start Applying</button>
-                </div> */}
+                <div className="navbar-end" >
+                    {user?.uid ?
+                        <>
+                            <span className=''>{user?.displayName || user?.email}</span>
+                            <button onClick={handleLogout} className='btn btn-ghost'>Logout</button>
+                        </> :
+                        <>
+                            <button className='btn btn-ghost'><Link to='/login'>Login</Link></button>
+                            <button className='btn btn-ghost'><Link to='/register'>Register</Link></button>
+
+                        </>
+                    }
+                    <span>{user?.photoURL ?
+                        <img style={{ width: "45px", borderRadius: "50%" }} src={user.photoURL} alt='' /> :
+                        <FaUserCircle className='text-[25px]'></FaUserCircle>}</span>
+                </div>
             </div>
         </div>
     );

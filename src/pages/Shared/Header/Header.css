@@ -1,4 +1,4 @@
-.walks-logo {
+.logo {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 800;
@@ -39,7 +39,7 @@ a {
         font-size: 14px;
         height: 40px;
     }
-    .walks-logo {
+    .logo {
         font-size: 19px;
     }
 }

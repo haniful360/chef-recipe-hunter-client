@@ -1,4 +1,6 @@
 import React, { useContext, useState } from 'react';
+import google from '../../../assets/google.png'
+import github from '../../../assets/github.png'
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -80,8 +82,8 @@ const Login = () => {
             })
     }
     return (
-        <div className='form_container'>
-            <h2 className='form_title'>Login!</h2>
+        <div className='form_container drop-shadow-2xl'>
+            <h2 className='form_title pt-2'>Login!</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form_control">
                     <label className='label' htmlFor="email">Email</label>
@@ -89,7 +91,7 @@ const Login = () => {
                 </div>
                 <div className="form_control">
                     <label className='label' htmlFor="password">Password</label>
-                    <input type={show ? 'text': 'password'} name='password' placeholder='Your Password' id='password' required />
+                    <input type={show ? 'text' : 'password'} name='password' placeholder='Your Password' id='password' required />
                     <p onClick={() => setShow(!show)} className='mt-2'>
                         {show ? <span>Hidden password</span> : <span>Show Password</span>}
                     </p>
@@ -104,15 +106,21 @@ const Login = () => {
                 <p>or</p>
                 <p className='divide'></p>
             </div>
-            <div className='social_login flex justify-around'>
-                <button onClick={handleGoogleSingIn} className='google_btn btn btn-dark'>
-                    SignIn Google
-                </button>
-                <button onClick={handleGithubSignIn} className='google_btn btn btn-dark'>
-                    SignIn Github
-                </button>
+            <div className='social_login'>
+                <div className='flex items-center justify-center'>
+                    <button onClick={handleGoogleSingIn} className='flex items-center justify-center bg-red-200 gap-3 lg:w-[300px] lg:h-[50px]'>
+                        <img className='social-img' src={google} alt="" />
+                        <span>SignIn Google</span>
+                    </button>
+                </div>
+                <div className='flex items-center justify-center'>
+                    <button onClick={handleGithubSignIn} className='flex items-center justify-center bg-red-200 lg:w-[300px] lg:h-[50px] my-3 gap-3'>
+                        <img className='social-img' src={github} alt="" />
+                        <span>SignIn Github</span>
+                    </button>
+                </div>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     );
 };

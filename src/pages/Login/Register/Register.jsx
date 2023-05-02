@@ -77,8 +77,8 @@ const Register = () => {
 
 
     return (
-        <div className='form_container'>
-            <h2 className='form_title mt-3'>Register!</h2>
+        <div className='form_container drop-shadow-2xl'>
+            <h2 className='form_title pt-2'>Register!</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form_control">
                     <label className='label' htmlFor="name">Name</label>

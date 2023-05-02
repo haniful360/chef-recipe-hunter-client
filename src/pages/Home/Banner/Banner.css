@@ -1,0 +1,7 @@
+.banner-bg{
+    background-image: url('../../../assets/home-2-recipe-list-iimg-1.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
