@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
 import './Header.css';
 import { FaUserCircle } from 'react-icons/fa';
+import ActiveLink from '../../Others/ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -15,9 +16,9 @@ const Header = () => {
     }
     console.log(user);
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+        <li><ActiveLink to='/'>Home</ActiveLink></li>
+        <li><ActiveLink to='/about'>About</ActiveLink></li>
+        <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
     </>
     return (
         <div className=''>
@@ -31,7 +32,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to="/" className="logo">Chef Hunter</Link>
+                    <Link to="/" className="logo">Tasty Yummies</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -42,11 +43,11 @@ const Header = () => {
                     {user?.uid ?
                         <>
                             <span className=''>{user?.displayName || user?.email}</span>
-                            <button onClick={handleLogout} className='btn btn-ghost'>Logout</button>
+                            <button onClick={handleLogout} className='btn btn-ghost capitalize'>Logout</button>
                         </> :
                         <>
-                            <button className='btn btn-ghost'><Link to='/login'>Login</Link></button>
-                            <button className='btn btn-ghost'><Link to='/register'>Register</Link></button>
+                            <button className='capitalize'><ActiveLink to='/login'>Login</ActiveLink></button>
+                            <button className='mx-4 capitalize'><ActiveLink to='/register'>Register</ActiveLink></button>
 
                         </>
                     }
