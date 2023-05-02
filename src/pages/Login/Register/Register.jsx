@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 // import { AuthContext } from '../providers/AuthProviders';
 
 
 
 const Register = () => {
-    const { createUser,googleSingIn } = useContext(AuthContext);
-    const provider = new GoogleAuthProvider();
+    const { createUser } = useContext(AuthContext);
+    
     // console.log(createUser);
     // const [error, setError] = useState('')
     // const { createUser } = useContext(AuthContext);
@@ -32,17 +32,8 @@ const Register = () => {
             })
 
     }
-    // google singIn
-    const handleGoogleSingIn = () =>{
-        googleSingIn(provider)
-        .then(result =>{
-            console.log(result.user);
-        })
-        .then(error =>{
-            console.log(error);
-        })
-    }
-    
+   
+
     return (
         <div className='form_container'>
             <h2 className='form_title mt-3'>Register!</h2>
@@ -72,14 +63,7 @@ const Register = () => {
                 <p>or</p>
                 <p className='divide'></p>
             </div>
-            <div className='social_login flex justify-around'>
-                <button onClick={handleGoogleSingIn} className='google_btn btn btn-dark'>
-                    SignIn Google
-                </button>
-                <button onClick="" className='google_btn btn btn-dark'>
-                    SignIn Github
-                </button>
-            </div>
+            
         </div>
     );
 };

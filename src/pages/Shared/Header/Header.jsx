@@ -2,15 +2,16 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
 // import './Header.css'
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    const handleLogout = () =>{
+    const handleLogout = () => {
         logOut()
-        .then(result =>{
-            console.log(result.user);
-        })
-        .catch(error =>console.log(error))
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => console.log(error))
     }
     console.log(user);
     return (
@@ -35,7 +36,9 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/about'>Statistics</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li>{user && <span className='text-dark'>{user?.email}</span>}</li>
+                        <li>{user && <span className='text-dark'>{user?.email || user.displayName}</span>}</li>
+
+                        {/* <li>{user.photoURL ? <img style={{width:"70px",borderRadius:"50%"}} src={user.photoURL} alt='' /> : <FaUserCircle></FaUserCircle>}</li> */}
                         {user ?
                             <button onClick={handleLogout}><Link to='/login'>Logout</Link></button> :
                             <button><Link to='/login'>Login</Link></button>}

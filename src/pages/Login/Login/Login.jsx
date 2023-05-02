@@ -4,10 +4,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import './Login.css';
 import { AuthContext } from '../../../providers/AuthProviders';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
-    const {signInUser} = useContext(AuthContext)
+
+    const { signInUser, googleSingIn, githubSingIn } = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     // const [error, setError] = useState('')
     // const [show, setShow] = useState(false);
     // const { signInUser } = useContext(AuthContext)
@@ -33,13 +37,32 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 form.reset()
-                
+
             })
             .catch(err => {
                 console.log(err.message);
-                
+
             })
 
+    }
+    // google singIn
+    const handleGoogleSingIn = () => {
+        googleSingIn(googleProvider)
+            .then(result => {
+                console.log(result.user);
+            })
+            .then(error => {
+                console.log(error);
+            })
+    }
+    const handleGithubSignIn = () => {
+        githubSingIn(githubProvider)
+            .then(result => {
+                console.log(result.user);
+            })
+            .then(error => {
+                console.log(error);
+            })
     }
     return (
         <div className='form_container'>
@@ -66,10 +89,13 @@ const Login = () => {
                 <p>or</p>
                 <p className='divide'></p>
             </div>
-            <div className='social_login'>  
-                <button className='google_btn'>
-                    
-                    SignInwith Google</button>
+            <div className='social_login flex justify-around'>
+                <button onClick={handleGoogleSingIn} className='google_btn btn btn-dark'>
+                    SignIn Google
+                </button>
+                <button onClick={handleGithubSignIn} className='google_btn btn btn-dark'>
+                    SignIn Github
+                </button>
             </div>
         </div>
     );
