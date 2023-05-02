@@ -17,10 +17,10 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const [error, setError] = useState('')
     const [show, setShow] = useState(false);
-    // const navigate = useNavigate();
-    // const location = useLocation();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    // let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/";
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -52,6 +52,7 @@ const Login = () => {
                 console.log(result.user);
                 form.reset();
                 toast('Login successful')
+                navigate(from, { replace: true });
 
             })
             .catch(err => {
@@ -65,6 +66,7 @@ const Login = () => {
     const handleGoogleSingIn = () => {
         googleSingIn(googleProvider)
             .then(result => {
+                navigate(from, { replace: true });
                 console.log(result.user);
             })
             .then(error => {
@@ -76,6 +78,7 @@ const Login = () => {
         githubSingIn(githubProvider)
             .then(result => {
                 console.log(result.user);
+                navigate(from, { replace: true });
             })
             .then(error => {
                 console.log(error);

@@ -8,11 +8,12 @@ import Login from "../pages/Login/Login/Login";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import Blogs from "../pages/Blogs/Blogs";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         element: <Main></Main>,
         children: [
             {
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
             },
             {
                 path: '/chef/:id',
-                element: <ChefDetails></ChefDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
+                element: <PrivateRoute><ChefDetails /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chefData/${params.id}`)
             },
-            
+
             {
                 path: '/blog',
                 element: <Blogs></Blogs>
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
-            
+
 
         ]
     },
