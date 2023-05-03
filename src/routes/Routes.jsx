@@ -21,9 +21,9 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/chef/:id',
+                path: 'chef/:id',
                 element: <PrivateRoute><ChefDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chefData/${params.id}`)
+                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-haniful360.vercel.app/chefData/${params.id}`)
             },
 
             {

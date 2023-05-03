@@ -9,6 +9,7 @@ import { AuthContext } from '../../../providers/AuthProviders';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LazyLoad from 'react-lazy-load';
 
 const Login = () => {
 
@@ -112,13 +113,15 @@ const Login = () => {
             <div className='social_login pb-4'>
                 <div className='flex items-center justify-center'>
                     <button onClick={handleGoogleSingIn} className='flex items-center justify-center gap-3 lg:w-[300px] lg:h-[50px] bg-gradient-to-r from-[#f2b51c] to-[#e8dd11e8]'>
-                        <img className='social-img' src={google} alt="" />
+                        <LazyLoad>
+                            <img className='social-img' src={google} alt="" />
+                        </LazyLoad>
                         <span>SignIn Google</span>
                     </button>
                 </div>
                 <div className='flex items-center justify-center'>
                     <button onClick={handleGithubSignIn} className='flex items-center justify-center lg:w-[300px] lg:h-[50px] my-3 gap-3 bg-gradient-to-r from-[#f2b51c] to-[#e8dd11e8]'>
-                        <img className='social-img' src={github} alt="" />
+                        <LazyLoad><img className='social-img' src={github} alt="" /></LazyLoad>
                         <span>SignIn Github</span>
                     </button>
                 </div>

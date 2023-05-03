@@ -5,6 +5,7 @@ import './Header.css';
 import { FaUserCircle } from 'react-icons/fa';
 import ActiveLink from '../../Others/ActiveLink/ActiveLink';
 import logo from '../../../assets/logo.png';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -36,7 +37,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <Link to="/" className="logo flex items-center gap-2 ">
-                        <img src={logo} alt="" /><span className='mt-3 text-[#FAC031]'>Tasty</span>
+                        <LazyLoad><img src={logo} alt="" /></LazyLoad><span className='mt-3 text-[#FAC031]'>Tasty</span>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
