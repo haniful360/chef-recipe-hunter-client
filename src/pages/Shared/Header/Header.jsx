@@ -4,6 +4,9 @@ import { AuthContext } from '../../../providers/AuthProviders';
 import './Header.css';
 import { FaUserCircle } from 'react-icons/fa';
 import ActiveLink from '../../Others/ActiveLink/ActiveLink';
+import logo from '../../../assets/logo.png';
+
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -32,7 +35,9 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to="/" className="logo">Tasty Yummies</Link>
+                    <Link to="/" className="logo flex items-center gap-2 ">
+                        <img src={logo} alt="" /><span className='mt-3 text-[#FAC031]'>Tasty</span>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -42,7 +47,7 @@ const Header = () => {
                 <div className="navbar-end" >
                     {user?.uid ?
                         <>
-                            <span className=''>{user?.displayName || user?.email}</span>
+                            {/* <span className=''>{user?.displayName || user?.email}</span> */}
                             <button onClick={handleLogout} className='btn btn-ghost capitalize'>Logout</button>
                         </> :
                         <>
@@ -52,10 +57,16 @@ const Header = () => {
                         </>
                     }
                     <span>{user?.photoURL ?
-                        <img style={{ width: "45px", borderRadius: "50%" }} src={user.photoURL} alt='' /> :
+                        <div className="tooltip tooltip-left tooltip-warning" data-tip={user?.displayName || user?.email}>
+                            <img style={{ width: "45px", borderRadius: "50%" }} src={user.photoURL} alt='' />
+                        </div>
+
+                        :
                         <FaUserCircle className='text-[25px]'></FaUserCircle>}</span>
                 </div>
+
             </div>
+
         </div>
     );
 };

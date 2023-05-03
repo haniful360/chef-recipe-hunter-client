@@ -11,13 +11,17 @@ const ChefCards = () => {
             .catch(err => console.error(err))
     }, [])
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
-            {
-                chefCards.map(item => <ChefCard
-                    key={item.id}
-                    item={item}
-                ></ChefCard>)
-            }
+        <div>
+            <h2 className='my-12 text-4xl chef-title text-center'>Experience Chef</h2>
+            <div className='px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+
+                {
+                    chefCards.map(item => <ChefCard
+                        key={item.id}
+                        item={item}
+                    ></ChefCard>)
+                }
+            </div>
         </div>
     );
 };

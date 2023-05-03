@@ -101,7 +101,7 @@ const Register = () => {
                 {/* <span className='text-green-600 ml-8'>{success}</span> */}
                 <input type="submit" value="SignUp" className='submit_btn' />
             </form>
-            <p className='new_account'>New to Chef Recipe <Link to='/login' className='text-info'>Already have an account?</Link></p>
+            <p className='new_account'>New to Food Tasty <Link to='/login' className='text-warning'>Already have an account?</Link></p>
             <div className='divide_container'>
                 <p className='divide'></p>
                 <p>or</p>

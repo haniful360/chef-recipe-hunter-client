@@ -1,3 +1,6 @@
 .active{
-    background-color: aquamarine;
+    background-color:#FAC031;
+    padding: 10px 20px;
+    color: rgba(0, 0, 0, 0.875);
+    border-radius: 7px;
 }

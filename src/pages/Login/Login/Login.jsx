@@ -103,21 +103,21 @@ const Login = () => {
 
                 <input type="submit" value="Login" className='submit_btn' />
             </form>
-            <p className='new_account'>New to Chef Recipe <Link to='/register' className='text-info'>Create a New Account</Link></p>
-            <div className='divide_container'>
+            <p className='new_account'>New to Food Tasty <Link to='/register' className='text-warning'>Create a New Account</Link></p>
+            <div className='divide_container my-2'>
                 <p className='divide'></p>
                 <p>or</p>
                 <p className='divide'></p>
             </div>
-            <div className='social_login'>
+            <div className='social_login pb-4'>
                 <div className='flex items-center justify-center'>
-                    <button onClick={handleGoogleSingIn} className='flex items-center justify-center bg-red-200 gap-3 lg:w-[300px] lg:h-[50px]'>
+                    <button onClick={handleGoogleSingIn} className='flex items-center justify-center gap-3 lg:w-[300px] lg:h-[50px] bg-gradient-to-r from-[#f2b51c] to-[#e8dd11e8]'>
                         <img className='social-img' src={google} alt="" />
                         <span>SignIn Google</span>
                     </button>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <button onClick={handleGithubSignIn} className='flex items-center justify-center bg-red-200 lg:w-[300px] lg:h-[50px] my-3 gap-3'>
+                    <button onClick={handleGithubSignIn} className='flex items-center justify-center lg:w-[300px] lg:h-[50px] my-3 gap-3 bg-gradient-to-r from-[#f2b51c] to-[#e8dd11e8]'>
                         <img className='social-img' src={github} alt="" />
                         <span>SignIn Github</span>
                     </button>

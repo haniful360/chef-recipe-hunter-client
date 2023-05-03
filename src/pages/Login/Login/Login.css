@@ -50,9 +50,9 @@
     height: 55px;
     margin-top: 25px;
     margin-left: 85px;
-    background: rgba(81, 190, 35, 0.764);
+    background: #FAC031;
     border-radius: 5px;
-    border: none;
+    border: 0;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -65,7 +65,7 @@
 }
 
 .submit_btn:hover {
-    background: rgba(0, 255, 21, 0.541);
+    background: #e6ae21;
 }
 
 .new_account {

@@ -1,0 +1,42 @@
+.recipes{
+    background: linear-gradient(90deg, #FAC031 0%, 
+    #e8dd11 100%);
+    width: 152px;
+    height: 55px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+
+.chef-title{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    color: #1A1919;
+}
+.chef-name, .recipe-name{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: #1A1919;
+}
+.ingredients{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1A1919;
+}
+.experience, .likes, .cooking-method{
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1A1919;
+}

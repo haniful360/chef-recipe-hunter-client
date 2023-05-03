@@ -10,14 +10,26 @@ const ChefDetails = () => {
     // console.log(recipe);
     return (
         <div>
-            <img src={img} alt="" />
-            <h3>{name}</h3>
-            {
-                recipes.map((recipe, index) => <Recipes
-                    key={index}
-                    recipe={recipe}
-                ></Recipes>)
-            }
+            <div className="flex gap-24 items-center px-6 bg-gradient-to-r from-[#FAC031] to-[#d8fa31d7] lg:w-[1280px] mx-auto rounded-lg mt-16 shadow-md">
+                <div className='py-4'>
+                    <img className='lg:w-[400px] rounded' src={img} alt="Shoes" />
+                </div>
+                <div className="">
+                    <h2 className="chef-name">Name: {name}</h2>
+                    <p className='experience'>Experience:{experience}</p>
+                    {/* <p>{recipes}</p> */}
+                    <span className='likes'>Likes: {likes}k</span>
+
+                </div>
+            </div>
+            <div className='lg:w-[1280px] mx-auto grid grid-cols-1 mt-16 md:grid-cols-2 lg:grid-cols-2 gap-6'>
+                {
+                    recipes.map((recipe, index) => <Recipes
+                        key={index}
+                        recipe={recipe}
+                    ></Recipes>)
+                }</div>
+
         </div>
     );
 };
