@@ -12,28 +12,28 @@
     
 }
 
-.chef-title , .banner-title{
+.chef-title , .banner-title, .question-title, .special-title{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 44px;
-    color: #1A1919;
+    color: #1a1919ca;
 }
-.chef-name, .recipe-name{
+.chef-name, .recipe-name, .dishes-name{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    color: #1A1919;
+    color: #535252;
 }
 .ingredients{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    color: #1A1919;
+    color: #313030;
 }
-.experience, .likes, .cooking-method{
+.experience, .likes, .cooking-method, .dishes-des{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;

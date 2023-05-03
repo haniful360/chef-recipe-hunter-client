@@ -12,7 +12,7 @@ const ChefCards = () => {
     }, [])
     return (
         <div>
-            <h2 className='my-12 text-4xl chef-title text-center'>Experience Chef</h2>
+            <h2 className='mb-12 mt-4 text-4xl chef-title text-center'>Our <span className='text-warning'>Talented</span> Chef</h2>
             <div className='px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {

@@ -42,7 +42,9 @@ const PDFFiles = () => {
       <Page>
         <Text>
           <div>
+          <h1 className='question-title my-12 text-center'>Free Quently Ask Questions</h1>
             <div className="lg:w-[1280px] mx-auto card card-compact bg-base-100 shadow-xl my-12">
+              
               <div className="p-8">
                 <h2 className="card-title">1.Tell us the differences between uncontrolled and controlled components?
                 </h2>

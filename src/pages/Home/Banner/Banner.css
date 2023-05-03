@@ -19,11 +19,11 @@
     background-clip: text;
 }
 
-.banner-describe {
+.banner-describe{
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
     color: #757575;
 }

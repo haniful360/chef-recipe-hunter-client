@@ -7,7 +7,7 @@ const ChefCard = ({ item }) => {
     // console.log(item);
     const { name, img, experience, likes } = item;
     return (
-        <div className=''>
+        
             <div className="rounded-lg bg-base-100 shadow">
                 <figure className="p-4">
                     <LazyLoad>
@@ -26,7 +26,6 @@ const ChefCard = ({ item }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
