@@ -7,8 +7,6 @@ import ActiveLink from '../../Others/ActiveLink/ActiveLink';
 import logo from '../../../assets/logo.png';
 import LazyLoad from 'react-lazy-load';
 
-
-
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
 

@@ -57,7 +57,13 @@ const Login = () => {
 
             })
             .catch(err => {
-                setError(err.message)
+                // setError(err.message)
+                if (err.message.includes('Firebase: Error (auth/wrong-password).')) {
+                    setError('Your password is incorrect')
+                }
+                else if (err.message.includes('Firebase: Error (auth/user-not-found).')) {
+                    setError('Your email is invalid');
+                }
 
             })
 

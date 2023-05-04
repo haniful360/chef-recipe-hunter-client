@@ -7,21 +7,14 @@ import { AuthContext } from '../../../providers/AuthProviders';
 
 const ChefCards = () => {
     const [chefCards, setChefCards] = useState([]);
-    const [loading, setLoading] = useState(true)
     
     useEffect(() => {
         fetch('https://chef-recipe-hunter-server-haniful360.vercel.app/chefData')
             .then(res => res.json())
             .then(data => {
                 setChefCards(data)
-                setLoading(false)
             });
     }, [])
-    
-    // spinner use
-    if (loading) {
-        return <Loading></Loading>
-    }
     
     return (
         <div>
