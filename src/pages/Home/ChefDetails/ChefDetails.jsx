@@ -8,16 +8,26 @@ import Loading from '../../Shared/Loading/Loading';
 
 
 const ChefDetails = () => {
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     const chefData = useLoaderData();
-    // console.log(chefData);
-    const { name, img, experience, recipes, likes,bioDescription,numberOfRecipes } = chefData;
+    const { name, img, experience, recipes, likes, bioDescription, numberOfRecipes } = chefData;
+
+    // loading spinner
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 500)
+    }, [])
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap py-12 px-12 bg-gradient-to-r from-[#FAC031] to-[#d8fa31d7] lg:w-[1280px] mx-auto rounded-lg mt-16 shadow-md">
                 <div className=''>
                     <LazyLoad>
-                    <img className='lg:w-[500px] h-[300px] rounded' src={img} alt="" />
+                        <img className='lg:w-[500px] h-[300px] rounded' src={img} alt="" />
                     </LazyLoad>
                 </div>
                 <div className="">
