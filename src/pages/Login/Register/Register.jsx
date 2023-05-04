@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProviders';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,13 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [error, setError] = useState('');
-    const [success, setSuccess] = useState('')
     const { createUser, updateUserProfile } = useContext(AuthContext);
-
-    // console.log(createUser);
-    // const [error, setError] = useState('')
-    // const { createUser } = useContext(AuthContext);
-
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,13 +40,15 @@ const Register = () => {
             return;
         }
 
-
+        // userCreate
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
                 handleUpdateUserProfile(name, photoURL);
                 form.reset();
                 toast.success('user has created successfully')
+                navigate('/login')
+                
             })
             .catch(error => {
                 console.log(error);

@@ -5,18 +5,19 @@ import './ChefCard.css'
 import LazyLoad from 'react-lazy-load';
 const ChefCard = ({ item }) => {
     // console.log(item);
-    const { name, img, experience, likes } = item;
+    const { name, img, experience, likes,numberOfRecipes } = item;
     return (
         
             <div className="rounded-lg bg-base-100 shadow">
                 <figure className="p-4">
                     <LazyLoad>
-                        <img src={img} alt="" className="rounded-xl" />
+                        <img src={img}  alt="" className="rounded-xl lg:w-[400px] lg:h-[250px]" />
                     </LazyLoad>
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="chef-name">Name: {name}</h2>
                     <p className='experience'>Experience: {experience}</p>
+                    <p className='recipe-number'>Recipe Number:   {numberOfRecipes}</p>
                     <div className="flex justify-between gap-12 mt-4 ">
                         <div className="flex items-center gap-1 likes">
                             <AiFillLike style={{ color: 'blue', fontSize: '20px' }}></AiFillLike>

@@ -47,7 +47,7 @@ const Login = () => {
             return;
         }
 
-
+        // signInUser
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
@@ -57,7 +57,6 @@ const Login = () => {
 
             })
             .catch(err => {
-                console.log(err.message);
                 setError(err.message)
 
             })
@@ -67,22 +66,24 @@ const Login = () => {
     const handleGoogleSingIn = () => {
         googleSingIn(googleProvider)
             .then(result => {
+                toast('Google SingIn successful')
                 navigate(from, { replace: true });
-                console.log(result.user);
             })
             .then(error => {
-                console.log(error);
+                setError(error.message);
             })
     }
     // github SignIn
     const handleGithubSignIn = () => {
         githubSingIn(githubProvider)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
+                // toast('Github SignIn successful')
                 navigate(from, { replace: true });
             })
             .then(error => {
-                console.log(error);
+                // console.log(error);
+                setError(error.message);
             })
     }
     return (

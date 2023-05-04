@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaPizzaSlice, FaHamburger, FaBirthdayCake, FaCoffee, FaIceCream, FaGlassCheers } from 'react-icons/fa';
-// import {    FaBirthdayCake } from 'react-icons/hi';
 
 const SpecialDishes = () => {
     return (
