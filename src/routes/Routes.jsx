@@ -10,6 +10,7 @@ import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import Blogs from "../pages/Blogs/Blogs";
 import PrivateRoute from "./PrivateRoute";
 
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,19 +24,20 @@ const router = createBrowserRouter([
             {
                 path: 'chef/:id',
                 element: <PrivateRoute><ChefDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-haniful360.vercel.app/chefData/${params.id}`)
+                loader: ({ params }) =>
+                    fetch(`https://chef-recipe-hunter-server-haniful360.vercel.app/chefData/${params.id}`),
             },
 
             {
-                path: '/blog',
+                path: 'blog',
                 element: <Blogs></Blogs>
             },
             {
-                path: '/login',
+                path: 'login',
                 element: <Login></Login>
             },
             {
-                path: '/register',
+                path: 'register',
                 element: <Register></Register>
             },
 

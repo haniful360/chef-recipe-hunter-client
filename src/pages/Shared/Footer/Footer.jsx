@@ -56,7 +56,7 @@ const Footer = () => {
             <div className='copyright'>
                 <div className='lg:w-[1280px] mx-auto lg:flex justify-between items center'>
                     <p>@2023 CareerHub. All Rights Reserved</p>
-                    <p>Powered by Walks of life</p> 
+                    <p>Powered by Food Tasty</p> 
                 </div>
             </div>
         </div>

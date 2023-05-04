@@ -15,7 +15,7 @@ const ChefCard = ({ item }) => {
                     </LazyLoad>
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="chef-name">Name: {name}</h2>
+                    <h2 className="chef-name">{name}</h2>
                     <p className='experience'>Experience: {experience}</p>
                     <p className='recipe-number'>Recipe Number:   {numberOfRecipes}</p>
                     <div className="flex justify-between gap-12 mt-4 ">

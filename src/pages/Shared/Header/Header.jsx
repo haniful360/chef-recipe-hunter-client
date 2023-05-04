@@ -11,17 +11,16 @@ import LazyLoad from 'react-lazy-load';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    // user logout 
     const handleLogout = () => {
         logOut()
-            .then(result => {
-                console.log(result.user);
-            })
-            .catch(error => console.log(error))
+            .then(result => {})
+            .catch(error => {})
     }
     console.log(user);
     const menuItems = <>
         <li><ActiveLink to='/'>Home</ActiveLink></li>
-        <li><ActiveLink to='/about'>About</ActiveLink></li>
         <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
     </>
     return (

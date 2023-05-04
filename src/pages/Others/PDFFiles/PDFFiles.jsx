@@ -1,48 +1,16 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import Pdf from "react-to-pdf";
+const ref = React.createRef();  
 const PDFFiles = () => {
-  const styles = StyleSheet.create({
-    body: {
-      paddingTop: 35,
-      paddingBottom: 65,
-      paddingHorizontal: 35,
-    },
-    title: {
-      fontSize: 24,
-      textAlign: "center",
-    },
-    text: {
-      margin: 12,
-      fontSize: 14,
-      textAlign: "justify",
-      fontFamily: "Times-Roman",
-    },
-    image: {
-      marginVertical: 15,
-      marginHorizontal: 100,
-    },
-    header: {
-      fontSize: 12,
-      marginBottom: 20,
-      textAlign: "center",
-      color: "grey",
-    },
-    pageNumber: {
-      position: "absolute",
-      fontSize: 12,
-      bottom: 30,
-      left: 0,
-      right: 0,
-      textAlign: "center",
-      color: "grey",
-    },
-  });
+  
   return (
-    <Document>
-      <Page>
-        <Text>
-          <div>
-          <h1 className='question-title my-12 text-center'>Free Quently Ask Questions?</h1>
+    <div className="relative">
+      <Pdf targetRef={ref} filename="blogs.pdf">
+        {({ toPdf }) => <button className='btn btn-warning absolute capitalize right-72' onClick={toPdf}>Download pdf</button>}
+      </Pdf>
+      <div ref={ref}>
+      <div>
+          <h1 className='question-title  text-center'>Free Quently Ask Questions?</h1>
             <div className="lg:w-[1280px] mx-auto card card-compact bg-base-100 shadow-xl my-12">
               
               <div className="p-8">
@@ -93,12 +61,10 @@ const PDFFiles = () => {
                 <p>3.Separation of Concerns: By moving the logic into a custom hook, you can separate concerns and keep your components focused on rendering UI.</p>
                 <p>4.Encapsulation: Custom hooks allow you to encapsulate state and logic within a single function, making it easier to manage and reason about.</p>
               </div>
-
             </div>
           </div>
-        </Text>
-      </Page>
-    </Document>
+      </div>
+    </div>
   );
 };
 

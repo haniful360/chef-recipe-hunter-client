@@ -47,11 +47,11 @@ const Register = () => {
                 handleUpdateUserProfile(name, photoURL);
                 form.reset();
                 toast.success('user has created successfully')
-                navigate('/login')
-                
+                // navigate('/login')
+
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 setError(error.message);
             })
 
@@ -94,7 +94,7 @@ const Register = () => {
                     <input type="password" name='password' placeholder='Your Password' id='password' required />
                     <span className='text-red-600 text-center'>{error}</span>
                 </div>
-                
+
                 {/* <span className='text-green-600 ml-8'>{success}</span> */}
                 <input type="submit" value="SignUp" className='submit_btn' />
             </form>

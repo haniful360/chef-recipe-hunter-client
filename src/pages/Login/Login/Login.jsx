@@ -12,11 +12,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import LazyLoad from 'react-lazy-load';
 
 const Login = () => {
-
     const { signInUser, googleSingIn, githubSingIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -50,10 +50,10 @@ const Login = () => {
         // signInUser
         signInUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 form.reset();
-                toast('Login successful')
                 navigate(from, { replace: true });
+                setSuccess('Login successful')
 
             })
             .catch(err => {
@@ -77,13 +77,12 @@ const Login = () => {
     const handleGithubSignIn = () => {
         githubSingIn(githubProvider)
             .then(result => {
-                // console.log(result.user);
-                // toast('Github SignIn successful')
+                toast('Github SignIn successful')
                 navigate(from, { replace: true });
             })
             .then(error => {
                 // console.log(error);
-                setError(error.message);
+                // setError(error.message);
             })
     }
     return (
@@ -101,6 +100,7 @@ const Login = () => {
                         {show ? <span>Hidden password</span> : <span>Show Password</span>}
                     </p>
                     <span className='text-red-600'>{error}</span>
+                    <span className='text-green-400'>{success}</span>
                 </div>
 
                 <input type="submit" value="Login" className='submit_btn' />

@@ -100,17 +100,34 @@
     letter-spacing: 0.005em;
 }
 
-.social-btn{
-    width:400px ;
+.social-btn {
+    width: 400px;
     height: 50px;
     background-color: #0b5b83;
     display: block;
     margin: 0 auto;
     color: #fff;
-    margin-top:20px ;
+    margin-top: 20px;
 }
 
-.social-img{
-    width:35px;
-    height:35px;
+.social-img {
+    width: 35px;
+    height: 35px;
+}
+
+/* mobile*/
+@media screen and (max-width:680px) {
+    .form_container {
+        width: 100%;
+    }
+
+    .form_container input {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .submit_btn {
+        width: 200px;
+        margin: 0;
+    }
 }
